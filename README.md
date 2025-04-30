@@ -1,5 +1,5 @@
 # FurryCalendarApi
- A python program that automatically adds real life furry events in southern california.  I have have been developing a website with this scraping as well to allow easy calendar access and to help the organze. I'm developing a Python program that automatically scrapes and adds real-life furry events in Southern California. This project is part of a larger website I'm building to provide easy calendar access for the community and help event organizers save time by streamlining event promotion.
+ A python program that automatically adds real life furry events in southern california.  I have have been developing a website to allow easy calendar access and to help the organze. I'm developing a Python program that automatically scrapes and adds real-life furry events in Southern California. This project is part of a larger website I'm building to provide easy calendar access for the community and help event organizers save time by streamlining event promotion.
 
 ## Some features and code I left out. Website able to view below!
 
