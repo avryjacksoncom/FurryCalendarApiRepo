@@ -1,0 +1,65 @@
+-----------------------------------------------------------------------
+
+Example event message:
+
+We are having an event on 4/29/25!
+Please bring food for the potluck and enter
+you rname in the google doc! 
+
+Where located in the park plaza!
+
+www3.goo324gledoc....com
+
+-----------------------------------------------------------------------
+
+How my program works!
+
+I scrape the message from an app called telegram.
+Using their own api to scrape an even message.
+
+I have the ai read an event message like the example above.
+
+Ai gives me these details:
+
+Name of event: Meetup
+Date: 04/29/25
+Location: Park Plaza
+Time: N/A
+
+-----------------------------------------------------------------------
+
+I grab the ai info by using multiple dictonaries to be potluck
+into an array:
+
+Name: Meetup
+Date: 04/29/35
+Location: Park Plaza
+Time: N/A
+
+I put this info in an array and pass it on to the next ai prompt.
+
+-----------------------------------------------------------------------
+
+The next AI prompt basically just transfroms the date and time to what google wants.
+Google calendar api likes their events to be transformed to a certain date time format:
+
+Example: Start date: 2024-06-30 End date 2025-07-30
+
+So this would basically make an all day event within the calendar. 
+I have tried time sections I think its generally confusing having time blocks in 
+calendar and not UI friendly.
+
+-----------------------------------------------------------------------
+
+I get all this info and put it into an array like so.
+[Meetup,2024-06-30 ,2024-07-30, Park Plaza, N/A]
+
+Final step is to set each index to different variables to
+be formatted into the google calendar.
+
+
+
+
+
+
+
