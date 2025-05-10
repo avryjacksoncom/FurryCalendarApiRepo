@@ -51,7 +51,9 @@ I then pass this info to another AI prompt that formats the date and time the wa
 
 Start date: 2025-04-29  
 End date: 2025-04-29
-This makes the event an all day entry on the calendar. I found that time blocks can get confusing and aren't super UI friendly.
+
+- This makes the event an all day entry on the calendar.
+I found that time blocks can get confusing and aren't super UI friendly.
 
 ---
 
