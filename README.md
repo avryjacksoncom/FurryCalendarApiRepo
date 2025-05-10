@@ -59,7 +59,7 @@ I found that time blocks can get confusing and aren't super UI friendly.
 
 Final step is splitting this array into variables and sending it to the Google Calendar API.
 
-##Notes
+## Notes
 - I left out some error handling code from this repo to keep it simple.
 
 - The script that I have on my server handles all common errors and most
@@ -73,7 +73,7 @@ edge cases.
   
 ---
 
-##Features to Add and Improve
+## Features to Add and Improve
 These are features and checks I still plan to work on:
 
 - Fix video uploads to the calendar.
