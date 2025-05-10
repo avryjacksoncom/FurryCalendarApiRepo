@@ -1,103 +1,71 @@
 # FurryCalendarApi
- A python program that automatically adds real life furry events in southern california.  I have have been developing a website to allow easy calendar access and to help the organze. I'm developing a Python program that automatically scrapes and adds real-life furry events in Southern California. This project is part of a larger website I'm building to provide easy calendar access for the community and help event organizers save time by streamlining event promotion.
 
-## Some features and code I left out. Website able to view below!
+A Python program that automatically adds real life furry events in Southern California to a Google Calendar. This script is part of a bigger project. I'm also building a website to make the calendar more accessible and to help event organizers save time by not manually adding events.
 
-View the website here!
-https://www.furryus.com
+🗓️ **View the website here:**  
+[https://www.furryus.com](https://www.furryus.com)
 
-- This is only for the calendar script portion. I have a repo for the website as well.
-I'm currently developing the website as well! It is not as developed yet as to this python script.
-One thing i didnt add was all the error exception handling I do to allow the porgram to keep running.
+---
 
-- I currently have this program on a linux server so it does not run on my laptop anymore.
-My program checks for a new message every 3 minutes. This was done on my laptop but now I
-have it connected to a virtual private server in the cloud.
+## About the Project
 
-- I left out all the client secrets and api keys to ensure saftey and security. 
-I basically use env files and file directory paths to automatically grab or refresh
-any client secrets or api keys that needed to be. 
+This repo is only for the calendar script. The website itself is in a separate repository that's still being developed.
 
-- I might've left out a lot of other code that I used developing the project in a different repository. This repo keeps it simple and to the point of what I did.
+I've set everything up on a Linux VPS, so the program runs independently without needing my laptop. It checks for new messages every 3 minutes using Telegram’s API.
 
-- This is the final code that has been working really well. I dont have to look at my program or code anymore. Since it handles all errors that I found during developing this.
+To keep things safe, I’ve excluded all client secrets and API keys. Everything is handled with `.env` files and file paths that refresh tokens or keys when needed.
 
-## Example event message:
+This is an overview version of the script, and it’s been running very well no need to really monitor it anymore.
 
-We are having an event on 4/29/25!  
-Please bring food for the potluck and enter  
-you rname in the google doc!  
+---
 
-Where located in the park plaza!  
+## How It Works
+
+The program scrapes messages from a Telegram group using the Telegram API. Messages usually look like this:
+
+We are having an event on 4/29/25!
+Please bring food for the potluck and enter
+your name in the Google Doc!
+
+We’re located in the Park Plaza!
 
 www3.goo324gledoc....com
 
----
+The AI reads this message and gives back the following details:
 
-## How my program works!
+- **Name of event**: Meetup  
+- **Date**: 04/29/25  
+- **Location**: Park Plaza  
+- **Time**: N/A
 
-I scrape the message from an app called telegram.  
-Using their own api to scrape an even message.  
+These details are turned into dictionaries and stored in an array like this:
+["Meetup", "2025-04-29", "2025-04-29", "Park Plaza", "N/A"]
 
-I have the ai read an event message like the example above.  
+I then pass this info to another AI prompt that formats the date and time the way the Google Calendar API expects:
 
-Ai gives me these details:
+Start date: 2025-04-29  
+End date: 2025-04-29
+This makes the event an all day entry on the calendar. I found that time blocks can get confusing and aren't super UI friendly.
 
-- Name of event: Meetup  
-- Date: 04/29/25  
-- Location: Park Plaza  
-- Time: N/A
+Final step is splitting this array into variables and sending it to the Google Calendar API.
 
----
+##Notes
+- I left out some error handling code from this repo to keep it simple.
 
-I grab the ai info by using multiple dictonaries to be potluck  
-into an array:
+- The script that I have on my server handles all common errors and most
+edge cases.
 
-- Name: Meetup  
-- Date: 04/29/35  
-- Location: Park Plaza  
-- Time: N/A
+- API keys and credentials are not included for security reasons.
 
-I put this info in an array and pass it on to the next ai prompt.
+- I’ve switched from running this on my laptop to a Linux VPS, so it stays running 24/7.
 
----
+- The repo only includes essential files. some additional utilities and older versions are in other private repos.
 
-The next AI prompt basically just transfroms the date and time to what google wants.  
-Google calendar api likes their events to be transformed to a certain date time format:
+##Features to Add and Improve
+These are features and checks I still plan to work on:
 
-Example:  
-Start date: 2024-06-30  
-End date: 2025-07-30  
+- Fix video uploads to the calendar.
 
-So this would basically make an all day event within the calendar.  
-I have tried time sections I think its generally confusing having time blocks in  
-calendar and not UI friendly.
+- Clean up functions like the Google Drive upload.
 
----
-
-I get all this info and put it into an array like so:  
-`[Meetup,2024-06-30 ,2024-07-30, Park Plaza, N/A]`
-
-Final step is to set each index to different variables to  
-be formatted into the google calendar.
-
----
-
-## FEATURES TO ADD AND DEVELOP
-    
-    FEATURES TO ADD AND DEVELOP
-        - These are features and checks I still yet to develop.
-
-        - Vids wont upload to calendar need to figure out a method for that
-        
-        - Maybe clean up some functions and stuff. like upload to google drive
-        function can be one for every type of format
-
-
-
-        -Search file function to search google drive defintely canbe implemented
-        better so it only searches through the most recent photo iinstead of all.
-
-        -Also  maybe fix all the hardocoded functions. Like for the check messages. 
-        -i can probably figure out a way to not use my own directory at this point.
-
+- Improve the file search logic for Google Drive should only scan recent files.
