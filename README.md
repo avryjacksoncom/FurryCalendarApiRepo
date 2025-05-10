@@ -22,14 +22,6 @@ any client secrets or api keys that needed to be.
 
 - This is the final code that has been working really well. I dont have to look at my program or code anymore. Since it handles all errors that I found during developing this.
 
-## Why did I even build this?
-
-I've created an automated calendar to make the furry fandom more accessible to those who may not know much about it. Many people aren't aware of the community unless they have a personal connection to someone already involved. I've met individuals who didn't realize how large and vibrant this community is. My goal is to make it easier for newcomers to discover and join the fandom without needing to know someone from within it.
-
-## Who am I helping with this?
-
-The community is supported by various channels, one of which has over 2,000 members on Telegram, posting events related to the fandom. My website is designed to assist not only those who are unfamiliar with the fandom but also the organizers who manage these events. By automating the process of event posting, my calendar saves organizers from having to manually input all the details. After reaching out to the people who run many of these events, I’ve received positive feedback about how much my program helps them. They’re excited about the tool, and the website I'm currently developing based off their input and suggestions.
-
 ## Example event message:
 
 We are having an event on 4/29/25!  
@@ -100,6 +92,8 @@ be formatted into the google calendar.
         
         - Maybe clean up some functions and stuff. like upload to google drive
         function can be one for every type of format
+
+
 
         -Search file function to search google drive defintely canbe implemented
         better so it only searches through the most recent photo iinstead of all.
