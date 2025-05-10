@@ -22,7 +22,7 @@ This is an overview version of the script, and it’s been running very well no 
 ## How It Works
 
 The program scrapes messages from a Telegram group using the Telegram API. Messages usually look like this:
-
+---
 We are having an event on 4/29/25!
 Please bring food for the potluck and enter
 your name in the Google Doc!
@@ -30,14 +30,14 @@ your name in the Google Doc!
 We’re located in the Park Plaza!
 
 www3.goo324gledoc....com
-
+---
 The AI reads this message and gives back the following details:
 
 - **Name of event**: Meetup  
 - **Date**: 04/29/25  
 - **Location**: Park Plaza  
 - **Time**: N/A
-
+---
 These details are turned into dictionaries and stored in an array like this:
 ["Meetup", "2025-04-29", "2025-04-29", "Park Plaza", "N/A"]
 
@@ -46,6 +46,7 @@ I then pass this info to another AI prompt that formats the date and time the wa
 Start date: 2025-04-29  
 End date: 2025-04-29
 This makes the event an all day entry on the calendar. I found that time blocks can get confusing and aren't super UI friendly.
+---
 
 Final step is splitting this array into variables and sending it to the Google Calendar API.
 
@@ -60,7 +61,7 @@ edge cases.
 - I’ve switched from running this on my laptop to a Linux VPS, so it stays running 24/7.
 
 - The repo only includes essential files. some additional utilities and older versions are in other private repos.
-
+---
 ##Features to Add and Improve
 These are features and checks I still plan to work on:
 
@@ -69,3 +70,4 @@ These are features and checks I still plan to work on:
 - Clean up functions like the Google Drive upload.
 
 - Improve the file search logic for Google Drive should only scan recent files.
+---
